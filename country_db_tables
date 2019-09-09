@@ -1,0 +1,82 @@
+CREATE TABLE "US_Videos" (
+    "video_rank" int   NOT NULL,
+    "video_id" varchar   NOT NULL,
+    "country_id" varchar   NOT NULL,
+    "title" varchar   NOT NULL,
+    "channel_title" varchar   NOT NULL,
+    "category_id" varchar   NOT NULL,
+    "publish_time" date   NOT NULL,
+    "views" int   NOT NULL,
+    CONSTRAINT "pk_US_Videos" PRIMARY KEY (
+        "video_id"
+     )
+);
+
+CREATE TABLE "GB_Videos" (
+    "video_rank" int   NOT NULL,
+    "video_id" varchar   NOT NULL,
+    "country_id" varchar   NOT NULL,
+    "title" varchar   NOT NULL,
+    "channel_title" varchar   NOT NULL,
+    "category_id" varchar   NOT NULL,
+    "publish_time" date   NOT NULL,
+    "views" int   NOT NULL,
+    CONSTRAINT "pk_GB_Videos" PRIMARY KEY (
+        "video_id"
+     )
+);
+
+CREATE TABLE "FR_Videos" (
+    "video_rank" int   NOT NULL,
+    "video_id" varchar   NOT NULL,
+    "country_id" varchar   NOT NULL,
+    "title" varchar   NOT NULL,
+    "channel_title" varchar   NOT NULL,
+    "category_id" varchar   NOT NULL,
+    "publish_time" date   NOT NULL,
+    "views" int   NOT NULL,
+    CONSTRAINT "pk_FR_Videos" PRIMARY KEY (
+        "video_id"
+     )
+);
+
+CREATE TABLE "CA_Videos" (
+    "video_rank" int   NOT NULL,
+    "video_id" varchar   NOT NULL,
+    "country_id" varchar   NOT NULL,
+    "title" varchar   NOT NULL,
+    "channel_title" varchar   NOT NULL,
+    "category_id" varchar   NOT NULL,
+    "publish_time" date   NOT NULL,
+    "views" int   NOT NULL,
+    CONSTRAINT "pk_CA_Videos" PRIMARY KEY (
+        "video_id"
+     )
+);
+
+CREATE TABLE "MX_Videos" (
+    "video_rank" int   NOT NULL,
+    "video_id" varchar   NOT NULL,
+    "country_id" varchar   NOT NULL,
+    "title" varchar   NOT NULL,
+    "channel_title" varchar   NOT NULL,
+    "category_id" varchar   NOT NULL,
+    "publish_time" date   NOT NULL,
+    "views" int   NOT NULL,
+    CONSTRAINT "pk_MX_Videos" PRIMARY KEY (
+        "video_id"
+     )
+);
+
+ALTER TABLE "US_Videos" ADD CONSTRAINT "fk_US_Videos_video_id" FOREIGN KEY("video_id")
+REFERENCES "FR_Videos" ("video_id");
+
+ALTER TABLE "GB_Videos" ADD CONSTRAINT "fk_GB_Videos_video_id" FOREIGN KEY("video_id")
+REFERENCES "FR_Videos" ("video_id");
+
+ALTER TABLE "FR_Videos" ADD CONSTRAINT "fk_FR_Videos_video_id" FOREIGN KEY("video_id")
+REFERENCES "CA_Videos" ("video_id");
+
+ALTER TABLE "MX_Videos" ADD CONSTRAINT "fk_MX_Videos_video_id" FOREIGN KEY("video_id")
+REFERENCES "CA_Videos" ("video_id");
+
