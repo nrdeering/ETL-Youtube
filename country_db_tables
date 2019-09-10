@@ -68,15 +68,3 @@ CREATE TABLE "MX_Videos" (
      )
 );
 
-ALTER TABLE "US_Videos" ADD CONSTRAINT "fk_US_Videos_video_id" FOREIGN KEY("video_id")
-REFERENCES "FR_Videos" ("video_id");
-
-ALTER TABLE "GB_Videos" ADD CONSTRAINT "fk_GB_Videos_video_id" FOREIGN KEY("video_id")
-REFERENCES "FR_Videos" ("video_id");
-
-ALTER TABLE "FR_Videos" ADD CONSTRAINT "fk_FR_Videos_video_id" FOREIGN KEY("video_id")
-REFERENCES "CA_Videos" ("video_id");
-
-ALTER TABLE "MX_Videos" ADD CONSTRAINT "fk_MX_Videos_video_id" FOREIGN KEY("video_id")
-REFERENCES "CA_Videos" ("video_id");
-
